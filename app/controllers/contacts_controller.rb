@@ -71,7 +71,7 @@ class ContactsController < ApplicationController
   protected
 
   def load_contacts
-    @contacts ||= user_signed_in? ? Contact.by_user(current_user) : Contact.by_active
+    @contacts ||= (user_signed_in? ? Contact.by_user(current_user) : Contact.by_active).order('updated_at DESC')
   end
 
   private
