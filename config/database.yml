@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: bloodsv_production
-  username: bloodsv
+  database: bloodsv
+  username: deploy
   password: <%= ENV['BLOODSV_DATABASE_PASSWORD'] %>
