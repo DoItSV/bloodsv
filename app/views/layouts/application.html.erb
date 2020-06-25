@@ -5,13 +5,16 @@
 		<%= csrf_meta_tags %>
 		<%= csp_meta_tag %>
 
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+
 		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 		<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 	</head>
 
 	<body class="p-2 m-0">
 		<div class="container">
-			<h1><strong>Salva vidas donando plasma</strong></h1>
+			<h1 class="head_name"><em><strong>#SalvemosOtroSV</strong></em></h1>
 			<h5>
 				<em>
 					En El Salvador existe el <strong>Programa de Plasma Convaleciente</strong> para pacientes afectados por <strong>#covid-19</strong>.
@@ -19,8 +22,8 @@
 					En este sitio ponemos en contacto a personas recuperadas con personas enfermas. Si perteneces al primer grupo puedes donar tu plasma y salvar vidas.
 					<br/>
 					<br/>
-			</em>
-		</h5>
+				</em>
+			</h5>
 		</div>
 
 		<%= yield %>

@@ -6,6 +6,10 @@
 *= require_self
 */
 
+.head_name
+{
+	font-family: 'Open Sans', sans-serif;
+}
 .dots
 {
 	/*background-color: #DDD;*/
