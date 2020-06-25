@@ -1,0 +1,52 @@
+<%= form_with(model: contact, local: true) do |form| %>
+  <% if contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contact.errors.count, "error") %> evitar guardar la información:</h2>
+
+      <ul>
+        <% contact.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :hospital_id, 'Hospital' %>
+    <%= form.collection_select :hospital_id, hospitals, :id,:name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :first_name, 'Nombre' %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name, 'Apellido' %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mobile, 'Teléfono de contacto' %>
+    <%= form.text_field :mobile %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status, '¿Desea continuar buscando donantes?' %>
+    <%= form.collection_select :status, contact_status, :first, :first %>
+  </div>
+
+  <div class="field">
+    <%= form.label :blood_type, 'Tipo de sangre' %>
+    <%= form.collection_select :blood_type, blood_types, :first, :first %>
+  </div>
+
+  <div class="field">
+    <%= form.label :details, 'Detalles' %>
+    <%= form.text_area :details %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Guardar', class: 'btn btn-success' %>
+  </div>
+<% end %>

@@ -1,0 +1,48 @@
+<% if notice %>
+  <div id="notice" class="alert alert-success" role="alert"><%= notice %></div>
+<% end %>
+<% if alert %>
+  <div id="alert" class="alert alert-danger" role="alert"><%= alert %></div>
+<% end %>
+
+<div class='py-4'>
+  <% if user_signed_in? %>
+    <a href="<%= new_contact_path %>" class="btn btn-primary active" role="button" aria-pressed="true">Nuevo paciente</a>
+    <a href="<%= destroy_user_session_path %>" class="btn btn-secondary active" role="button" aria-pressed="true" data-method="delete">Cerrar sesión</a>
+  <% else %>
+    <a href="<%= new_user_session_path %>" class="btn btn-primary active" role="button" aria-pressed="true">Iniciar sesión</a>
+    <a href="<%= new_user_registration_path %>" class="btn btn-secondary active" role="button" aria-pressed="true">Crear cuenta</a>
+  <% end %>
+</div>
+
+<table class='table'>
+  <thead class='thead-dark'>
+    <tr>
+      <th scope='col'>Hospital</th>
+      <th scope='col'>Nombre</th>
+      <th scope='col'>Apellido</th>
+      <th scope='col'>Teléfono de contacto</th>
+      <th scope='col'>Tipo de Sangre</th>
+      <th scope='col'>Detalles</th>
+      <th scope='col'></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td scope='row'><%= contact.hospital.name %></td>
+        <td scope='row'><%= link_to contact.first_name, contact %></td>
+        <td scope='row'><%= link_to contact.last_name, contact %></td>
+        <td scope='row'><%= contact.mobile %></td>
+        <td scope='row'><%= contact.blood_type %></td>
+        <td scope='row'><%= contact.details %></td>
+        <td scope='row'>
+          <% if policy(contact).edit? %>
+            <%= link_to "Actualizar", edit_contact_path(contact) %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

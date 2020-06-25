@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Hospital:</strong>
+  <%= @contact.hospital.name %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @contact.first_name %>
+</p>
+
+<p>
+  <strong>Apellido:</strong>
+  <%= @contact.last_name %>
+</p>
+
+<p>
+  <strong>Teléfono de contacto:</strong>
+  <%= @contact.mobile %>
+</p>
+
+<p>
+  <strong>Tipo de Sangre:</strong>
+  <%= @contact.blood_type %>
+</p>
+
+<p>
+  <strong>Detalles:</strong>
+  <%= @contact.details %>
+</p>
+
+<div class='py-4'>
+  <% if policy(@contact).edit? %>
+    <a href="<%= edit_contact_path(@contact) %>" class="btn btn-primary active" role="button" aria-pressed="true">Actualizar</a>
+  <% end %>
+  <a href="<%= contacts_path %>" class="btn btn-secondary active" role="button" aria-pressed="true">Regresar</a>
+</div>
