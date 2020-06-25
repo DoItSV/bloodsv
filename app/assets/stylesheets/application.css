@@ -32,26 +32,57 @@
 	margin-inline-end: 0px;
 	padding-inline-start: 0px;
 }
+
+
+/*Table HEADER actions*/
+.head_shot a.btn.shot_clic
+{
+/*
+	background-color: #2276ba !important;
+	border: 2px solid #1c5c86 !important;
+*/
+	color: white !important;
+	padding: 2px 10px;
+	font-size: 16px;
+	font-family: "Open Sans";
+	font-style: italic;
+	font-weight: 100;
+}
+.head_shot a.btn.shot_clic:hover
+{
+/*
+	background-color: #1c5c86 !important;
+	border: 2px solid #2276ba !important;
+*/
+	color: white;
+}
+
+
+/*Table ROW actions*/
 table tr td.cell
 {
 	font-size: 0px;
 }
 table tr td.cell a.btn.btn-light.shot_clic
 {
+/*
 	background-color: #2276ba !important;
 	border: 2px solid #1c5c86 !important;
 	color: white !important;
+*/
 	padding: 2px 10px;
-	font-size: 13px;
+	font-size: 14px;
 	font-family: "Open Sans";
 	font-style: italic;
 	font-weight: 100;
 }
 table tr td.cell a.btn.btn-light.shot_clic:hover
 {
+/*
 	background-color: #1c5c86 !important;
 	border: 2px solid #2276ba !important;
 	color: white;
+*/
 }
 table tr td.cell a.btn.btn-light.shot_clic
 {

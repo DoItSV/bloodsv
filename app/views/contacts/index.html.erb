@@ -94,14 +94,14 @@
 
 <br/>
 <br/>
-<div class="container">
+<div class="container head_shot">
 	<div class='p-0 m-0 text-right'>
 		<% if user_signed_in? %>
-			<a href="<%= new_contact_path %>" class="btn btn-primary active" role="button" aria-pressed="true">+Agregar paciente</a>
-			<a href="<%= destroy_user_session_path %>" class="btn btn-secondary active" role="button" aria-pressed="true" data-method="delete">Cerrar sesión</a>
+			<a href="<%= new_contact_path %>" class="btn shot_clic btn-primary active" role="button" aria-pressed="true">+Agregar paciente</a>
+			<a href="<%= destroy_user_session_path %>" class="btn shot_clic btn-secondary active" role="button" aria-pressed="true" data-method="delete">Cerrar sesión</a>
 		<% else %>
-			<a href="<%= new_user_registration_path %>" class="btn btn-primary active" role="button" aria-pressed="true">+Agregar paciente</a>
-			<a href="<%= new_user_session_path %>" class="btn btn-secondary active" role="button" aria-pressed="true">Iniciar sesión</a>
+			<a href="<%= new_user_registration_path %>" class="btn shot_clic btn-primary active" role="button" aria-pressed="true">+Agregar paciente</a>
+			<a href="<%= new_user_session_path %>" class="btn shot_clic btn-secondary active" role="button" aria-pressed="true">Iniciar sesión</a>
 		<% end %>
 	</div>
 </div>
