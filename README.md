@@ -13,10 +13,11 @@ Website que busca conectar pacientes COVID-19 recuperados con pacientes COVID-19
 ## Cómo comenzar
 
 1. `bundle install`
-2. `rails db:create`
-3. `rails db:migrate`
-4. `rails db:seed`
-5. `rails s`
+2. `yarn install --check-files`
+3. `rails db:create`
+4. `rails db:migrate`
+5. `rails db:seed`
+6. `rails s`
 
 ## Cómo colaborar
 
