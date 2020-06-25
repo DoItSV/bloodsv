@@ -20,7 +20,7 @@ Website que busca conectar pacientes COVID-19 recuperados con pacientes COVID-19
 
 ## Cómo colaborar
 
-Crea un PR a partir de tu fork del proyecto (https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork).
+Crea un PR a partir de tu fork del proyecto [Creating a PR from a Fork](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork).
 
 
 ## Licencia
