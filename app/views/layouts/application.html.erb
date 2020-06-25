@@ -28,31 +28,38 @@
 		<meta name="msapplication-config" content="/pict/icon/browserconfig.xml" />
 		<meta name="theme-color" content="#ffffff" />
 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 		<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 	</head>
 
-	<body class="p-2 m-0">
-		<div class="container">
-			<h1 class="head_name"><em><strong>#SalvemosOtroSV</strong></em></h1>
-			<h5>
-				<em>
-					En El Salvador existe el <strong>Programa de Plasma Convaleciente</strong> para pacientes afectados por <strong>#covid-19</strong>.
-					<br/>
-					En este sitio ponemos en contacto a personas recuperadas con personas enfermas. Si perteneces al primer grupo puedes donar tu plasma y salvar vidas.
-					<br/>
-					<br/>
-				</em>
-			</h5>
+	<body class="p-0 m-0 bg-dark">
+
+		<div class="pt-2 m-0 bg-white">
+			<div class="container">
+				<h1 class="head_name"><em><strong><span class="text-dark">#Salvemos</span><span class="text-primary">Otro</span><span class="text-primary">SV</span></strong></em></h1>
+				<h1 class="head_info">
+					<em>
+						En El Salvador existe el <strong>Programa de Plasma Convaleciente</strong> para pacientes afectados por <strong>#covid-19</strong>. En este sitio ponemos en contacto a personas recuperadas con personas enfermas. Si perteneces al primer grupo puedes donar tu plasma y salvar vidas.
+						<br/>
+						<br/>
+					</em>
+				</h5>
+			</div>
+
+			<%= yield %>
 		</div>
 
-		<%= yield %>
 		<footer class="text-white bg-dark">
 			<div class="container">
-				<div class='py-4 text-right'>
+				<div class='py-4 text-left'>
 					<p>
 						<em>
-							Este es un proyecto sin fines de lucro con el objetivo de apoyar a personas afectadas por la #covid-19.<br/>
+							Este es un proyecto sin fines de lucro, cuyo único objetivo es apoyar a personas afectadas por la #covid-19.
+							<br/>
+							Si tienes algún problema, sugerencia o apoyo, puedes escribir a <a href="mailto:salvemosotrosv@gmail.com"><span class="text-primary">salvemosotrosv@gmail.com</span></a>.
+							<br/>
 						</em>
 					</p>
 				</div>

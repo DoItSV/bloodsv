@@ -6,6 +6,13 @@
 *= require_self
 */
 
+html,
+body
+{
+	height: 100%;
+	position: relative;
+}
+
 .head_name
 {
 	font-family: 'Open Sans', sans-serif;
@@ -17,6 +24,35 @@
 	background-size: auto 100%;
 	font-size: 30px;
 }
+
+.head_info
+{
+	font-family: 'Open Sans', sans-serif;
+	color: #000;
+	font-size: 20px;
+}
+
+.card-group{
+	display: block;
+	width: 100%;
+	margin: 0px auto;
+	text-align: center;
+}
+.card-group .card{
+	display: inline-block;
+	width: 45%;
+	border-radius: 0px;
+	border: 0px solid #ddd;
+	vertical-align: top;
+}
+.card-group .card-body{
+	padding: 10px 2px 10px 2px;
+}
+.card-group .card-body .card-title{
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+}
+
 .dots
 {
 	/*background-color: #DDD;*/
@@ -103,7 +139,10 @@ table tr td.cell_dual a.btn.btn-light.shot_clic
 @media screen and (min-width: 576px){
 	.head_name {
 		padding-left: 45px;
-		font-size: 30px;
+		font-size: 36px;
+	}
+	.head_info {
+		font-size: 21px;
 	}
 }
 
@@ -113,6 +152,15 @@ table tr td.cell_dual a.btn.btn-light.shot_clic
 		padding-left: 45px;
 		font-size: 38px;
 	}
+	.head_info {
+		font-size: 23px;
+	}
+	.card-group{
+		width: 100%;
+	}
+	.card-group .card{
+		width: 16%;
+	}
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -121,6 +169,9 @@ table tr td.cell_dual a.btn.btn-light.shot_clic
 		padding-left: 50px;
 		font-size: 40px;
 	}
+	.head_info {
+		font-size: 25px;
+	}
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -128,6 +179,9 @@ table tr td.cell_dual a.btn.btn-light.shot_clic
 	.head_name {
 		padding-left: 50px;
 		font-size: 42px;
+	}
+	.head_info {
+		font-size: 27px;
 	}
 }
 

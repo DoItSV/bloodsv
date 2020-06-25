@@ -20,7 +20,7 @@
 			<img src="/pict/Group 1.png" class="card-img-top" alt="...">
 			<div class="card-body">
 				<h5 class="card-title"><strong><em>Chécate</strong></em></h5>
-				<p class="card-text"><em>Debes haberte recuperado de <span>#COVID-19</span> y tener buena salud.</em></p>
+				<p class="card-text"><em>Debes ser recuperado de <span>#covid-19</span> y con buena salud.</em></p>
 			</div>
 			<!-- 
 			<div class="card-footer">
@@ -44,7 +44,7 @@
 			<img src="/pict/Group 3.png" class="card-img-top" alt="...">
 			<div class="card-body">
 				<h5 class="card-title"><strong><em>Contacta</strong></em></h5>
-				<p class="card-text"><em>Ponte en contacto para saber si aún necesitan donante de sangre.</em></p>
+				<p class="card-text"><em>Elige un paciente con tu tipo de sangre para donar sangre.</em></p>
 			</div>
 			<!-- 
 			<div class="card-footer">
@@ -56,7 +56,7 @@
 			<img src="/pict/Group 4.png" class="card-img-top" alt="...">
 			<div class="card-body">
 				<h5 class="card-title"><strong><em>Dona</strong></em></h5>
-				<p class="card-text"><em>Debes ir al hospital a donar sangre. Presenta el nombre del paciente.</em></p>
+				<p class="card-text"><em>Debes ir al hospital a donar sangre. No olvides el nombre.</em></p>
 			</div>
 			<!-- 
 			<div class="card-footer">
@@ -68,7 +68,7 @@
 			<img src="/pict/Group 5.png" class="card-img-top" alt="...">
 			<div class="card-body">
 				<h5 class="card-title"><strong><em>Cuídate</strong></em></h5>
-				<p class="card-text"><em>Dona cada 8 días, máximo 4 veces seguidas. Espera 1 mes.</em></p>
+				<p class="card-text"><em>Dona cada 8 días, máximo 4 seguidas. Espera 1 mes.</em></p>
 			</div>
 			<!-- 
 			<div class="card-footer">
@@ -110,34 +110,34 @@
 	<h5 class="p-0 m-1"><strong><em>Listado de pacientes que necesitan plasma</strong></em></h5>
 </div>
 <div class="container">
-	<table class='table'>
+	<table class='table table-hover table-responsive-sm'>
 		<thead class='thead-dark'>
 			<tr>
+				<th scope='col'></th>
+				<th scope='col'>Tipo</th>
 				<th scope='col'>Hospital</th>
+				<th scope='col'>Contacto</th>
 				<th scope='col'>Nombre</th>
 				<th scope='col'>Apellido</th>
-				<th scope='col'>Teléfono de contacto</th>
-				<th scope='col'>Tipo de Sangre</th>
-				<th scope='col'>Detalles</th>
-				<th scope='col'></th>
+				<th scope='col'>Info</th>
 			</tr>
 		</thead>
 
 		<tbody>
 			<% @contacts.each do |contact| %>
 				<tr>
-					<td scope='row'><%= contact.hospital.name %></td>
-					<td scope='row'><%= contact.first_name %></td>
-					<td scope='row'><%= contact.last_name %></td>
-					<td scope='row'><%= contact.mobile %></td>
-					<td scope='row'><%= contact.blood_type %></td>
-					<td scope='row'><%= contact.details %></td>
 					<td scope='row' class='cell <% if policy(contact).edit? %>cell_dual<% end %>'>
 						<a href="<%= contact_path(contact) %>" class="btn btn-light active btn-sm shot_clic" role="button" aria-pressed="true">Ver más</a>
 						<% if policy(contact).edit? %>
 							<a href="<%= edit_contact_path(contact) %>" class="btn btn-light active btn-sm shot_clic" role="button" aria-pressed="true">Actualizar</a>
 						<% end %>
 					</td>
+					<td scope='row'><%= contact.blood_type %></td>
+					<td scope='row'><%= contact.hospital.name %></td>
+					<td scope='row'><%= contact.mobile %></td>
+					<td scope='row'><%= contact.first_name %></td>
+					<td scope='row'><%= contact.last_name %></td>
+					<td scope='row'><%= contact.details %></td>
 				</tr>
 			<% end %>
 		</tbody>
