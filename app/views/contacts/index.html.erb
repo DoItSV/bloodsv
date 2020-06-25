@@ -132,10 +132,10 @@
 					<td scope='row'><%= contact.mobile %></td>
 					<td scope='row'><%= contact.blood_type %></td>
 					<td scope='row'><%= contact.details %></td>
-					<td scope='row'>
-						<a href="<%= contact_path(contact) %>" class="btn btn-light active btn-sm" role="button" aria-pressed="true">Ver</a>
+					<td scope='row' class='cell <% if policy(contact).edit? %>cell_dual<% end %>'>
+						<a href="<%= contact_path(contact) %>" class="btn btn-light active btn-sm shot_clic" role="button" aria-pressed="true">Ver más</a>
 						<% if policy(contact).edit? %>
-							<a href="<%= edit_contact_path(contact) %>" class="btn btn-light active btn-sm" role="button" aria-pressed="true">Actualizar</a>
+							<a href="<%= edit_contact_path(contact) %>" class="btn btn-light active btn-sm shot_clic" role="button" aria-pressed="true">Actualizar</a>
 						<% end %>
 					</td>
 				</tr>
