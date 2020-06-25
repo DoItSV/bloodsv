@@ -11,42 +11,38 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :hospital_id, 'Hospital' %>
-    <%= form.collection_select :hospital_id, hospitals, :id,:name %>
+    <%= form.collection_select :hospital_id, hospitals, :id, :name, {}, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :first_name, 'Nombre' %>
-    <%= form.text_field :first_name %>
+  <div class="form-group">
+    <%= form.text_field :first_name, class: 'form-control', placeholder: 'Nombre' %>
   </div>
 
-  <div class="field">
-    <%= form.label :last_name, 'Apellido' %>
-    <%= form.text_field :last_name %>
+  <div class="form-group">
+    <%= form.text_field :last_name, class: 'form-control', placeholder: 'Apellido' %>
   </div>
 
-  <div class="field">
-    <%= form.label :mobile, 'Teléfono de contacto' %>
-    <%= form.text_field :mobile %>
+  <div class="form-group">
+    <%= form.text_field :mobile, class: 'form-control', placeholder: 'Teléfono de contacto' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
+    <%= form.collection_select :blood_type, blood_types, :first, :first, {}, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_area :details, class: 'form-control', placeholder: 'Detalles' %>
+  </div>
+
+  <div class="form-group">
     <%= form.label :status, '¿Desea continuar buscando donantes?' %>
-    <%= form.collection_select :status, contact_status, :first, :first %>
-  </div>
-
-  <div class="field">
-    <%= form.label :blood_type, 'Tipo de sangre' %>
-    <%= form.collection_select :blood_type, blood_types, :first, :first %>
-  </div>
-
-  <div class="field">
-    <%= form.label :details, 'Detalles' %>
-    <%= form.text_area :details %>
+    <%= form.collection_select :status, contact_status, :first, :first, {}, class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= form.submit 'Guardar', class: 'btn btn-success' %>
+    <a href="<%= contacts_path %>" class="btn btn-secondary active" role="button" aria-pressed="true">Regresar</a>
+    <%= form.submit 'Guardar', class: 'btn btn-primary' %>
   </div>
 <% end %>

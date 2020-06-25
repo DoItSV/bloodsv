@@ -5,13 +5,25 @@
   <div id="alert" class="alert alert-danger" role="alert"><%= alert %></div>
 <% end %>
 
+<div class='py-1'>
+  <ol>
+    <li>Antes de donar sangre asegurate de estar bien de salud</li>
+    <li>Busca personas que necesiten de tu tipo de sangre</li>
+    <li>Llama al número de contacto y mira si aún necesitan un donante de sangre</li>
+    <li>Ponte de acuerdo y ve al hospital a donar sangre, recuerda llevar su nombre</li>
+    <li>Puedes donar cada 8 días hasta por 4 veces consecutivas</li>
+    <li>Luego de que hayas donado 4 veces debes esperar 1 mes para volver a donar</li>
+    <li>Puedes encontrar más información en <a href='https://twitter.com/EICEES/status/1275111470259453954' target='_BLANK'>la cuenta de Twitter de la EICE del Gobierno de El Salvador</a></li>
+  </ol>
+</div>
+
 <div class='py-4'>
   <% if user_signed_in? %>
     <a href="<%= new_contact_path %>" class="btn btn-primary active" role="button" aria-pressed="true">Nuevo paciente</a>
     <a href="<%= destroy_user_session_path %>" class="btn btn-secondary active" role="button" aria-pressed="true" data-method="delete">Cerrar sesión</a>
   <% else %>
-    <a href="<%= new_user_session_path %>" class="btn btn-primary active" role="button" aria-pressed="true">Iniciar sesión</a>
-    <a href="<%= new_user_registration_path %>" class="btn btn-secondary active" role="button" aria-pressed="true">Crear cuenta</a>
+    <a href="<%= new_user_registration_path %>" class="btn btn-primary active" role="button" aria-pressed="true">Nuevo paciente</a>
+    <a href="<%= new_user_session_path %>" class="btn btn-secondary active" role="button" aria-pressed="true">Iniciar sesión</a>
   <% end %>
 </div>
 
@@ -32,14 +44,15 @@
     <% @contacts.each do |contact| %>
       <tr>
         <td scope='row'><%= contact.hospital.name %></td>
-        <td scope='row'><%= link_to contact.first_name, contact %></td>
-        <td scope='row'><%= link_to contact.last_name, contact %></td>
+        <td scope='row'><%= contact.first_name %></td>
+        <td scope='row'><%= contact.last_name %></td>
         <td scope='row'><%= contact.mobile %></td>
         <td scope='row'><%= contact.blood_type %></td>
         <td scope='row'><%= contact.details %></td>
         <td scope='row'>
+          <a href="<%= contact_path(contact) %>" class="btn btn-light active btn-sm" role="button" aria-pressed="true">Ver</a>
           <% if policy(contact).edit? %>
-            <%= link_to "Actualizar", edit_contact_path(contact) %>
+            <a href="<%= edit_contact_path(contact) %>" class="btn btn-light active btn-sm" role="button" aria-pressed="true">Actualizar</a>
           <% end %>
         </td>
       </tr>
