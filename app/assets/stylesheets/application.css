@@ -5,3 +5,26 @@
 
 *= require_self
 */
+
+.dots
+{
+	/*background-color: #DDD;*/
+}
+.dots ol
+{
+	/*background-color: #DDD;*/
+	text-align: center;
+	list-style-type: decimal;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	padding-inline-start: 0px;
+}
+.dots ol li
+{
+	padding: 10px 10px;
+	display : inline-block;
+	background-color: #DDD;
+	max-width: 100px;
+}

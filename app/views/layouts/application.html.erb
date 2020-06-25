@@ -1,22 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Bloodsv</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+	<head>
+		<title>Bloodsv</title>
+		<%= csrf_meta_tags %>
+		<%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+	</head>
 
-  <body class="py-4">
-    <div class="container">
-      <h1>Ayuda a pacientes COVID-19 en El Salvador</h1>
-      <p class="lead">
-        Comparte tus anticuerpos con una persona en gravedad para combatir la enfermedad.
-      </p>
+	<body class="p-2 m-0">
+		<div class="container">
+			<h1><strong>Salva vidas donando plasma</strong></h1>
+			<h5>
+				<em>
+					En El Salvador existe el <strong>Programa de Plasma Convaleciente</strong> para pacientes afectados por <strong>#covid-19</strong>.
+					<br/>
+					En este sitio ponemos en contacto a personas recuperadas con personas enfermas. Si perteneces al primer grupo puedes donar tu plasma y salvar vidas.
+					<br/>
+					<br/>
+			</em>
+		</h5>
+		</div>
 
-      <%= yield %>
-    </div>
-  </body>
+		<%= yield %>
+		<footer class="text-white bg-dark">
+			<div class="container">
+				<div class='py-4 text-right'>
+					<p>
+						<em>
+							Este es un proyecto sin fines de lucro con el objetivo de apoyar a personas afectadas por la #covid-19.<br/>
+						</em>
+					</p>
+				</div>
+			</div>
+		</footer>
+	</body>
 </html>
