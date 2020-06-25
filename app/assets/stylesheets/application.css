@@ -10,6 +10,12 @@
 {
 	font-family: 'Open Sans', sans-serif;
 	color: #2276ba;
+	padding-left: 35px;
+	background-image: url('/pict/icon_site.png');
+	background-position: 0px center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	font-size: 30px;
 }
 .dots
 {
@@ -26,10 +32,106 @@
 	margin-inline-end: 0px;
 	padding-inline-start: 0px;
 }
-.dots ol li
+
+
+/*Table HEADER actions*/
+.head_shot a.btn.shot_clic
 {
-	padding: 10px 10px;
-	display : inline-block;
-	background-color: #DDD;
-	max-width: 100px;
+/*
+	background-color: #2276ba !important;
+	border: 2px solid #1c5c86 !important;
+*/
+	color: white !important;
+	padding: 2px 10px;
+	font-size: 16px;
+	font-family: "Open Sans";
+	font-style: italic;
+	font-weight: 100;
 }
+.head_shot a.btn.shot_clic:hover
+{
+/*
+	background-color: #1c5c86 !important;
+	border: 2px solid #2276ba !important;
+*/
+	color: white;
+}
+
+
+/*Table ROW actions*/
+table tr td.cell
+{
+	font-size: 0px;
+}
+table tr td.cell a.btn.btn-light.shot_clic
+{
+/*
+	background-color: #2276ba !important;
+	border: 2px solid #1c5c86 !important;
+	color: white !important;
+*/
+	padding: 2px 10px;
+	font-size: 14px;
+	font-family: "Open Sans";
+	font-style: italic;
+	font-weight: 100;
+}
+table tr td.cell a.btn.btn-light.shot_clic:hover
+{
+/*
+	background-color: #1c5c86 !important;
+	border: 2px solid #2276ba !important;
+	color: white;
+*/
+}
+table tr td.cell a.btn.btn-light.shot_clic
+{
+	width: 100%;
+}
+table tr td.cell_dual a.btn.btn-light.shot_clic
+{
+	width: 50%;
+}
+
+
+
+
+
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (min-width: 576px){
+	.head_name {
+		padding-left: 45px;
+		font-size: 30px;
+	}
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (min-width: 768px){
+	.head_name {
+		padding-left: 45px;
+		font-size: 38px;
+	}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px){
+	.head_name {
+		padding-left: 50px;
+		font-size: 40px;
+	}
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px){
+	.head_name {
+		padding-left: 50px;
+		font-size: 42px;
+	}
+}
+
+
+
+
+
