@@ -25,7 +25,7 @@
   </div>
 
   <div class="form-group">
-    <%= form.text_field :mobile, class: 'form-control', placeholder: 'Teléfono de contacto' %>
+    <%= form.text_field :mobile, class: 'form-control', placeholder: 'Teléfono de contacto (es opcional pero recomendado)' %>
   </div>
 
   <div class="form-group">
@@ -37,7 +37,7 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :status, '¿Desea continuar buscando donantes?' %>
+    <%= form.label :status, 'Buscar donantes ahora' %>
     <%= form.collection_select :status, contact_status, :first, :first, {}, class: 'form-control' %>
   </div>
 
