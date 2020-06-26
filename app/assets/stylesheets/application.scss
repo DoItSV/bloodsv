@@ -1,0 +1,173 @@
+/*
+*= require bootstrap
+
+*= require_tree .
+
+*= require_self
+*/
+
+html,
+body {
+  height: 100%;
+  position: relative;
+  line-height: 1.3;
+}
+
+.head__name {
+  font-family: 'Open Sans', sans-serif;
+  color: #2276ba;
+  padding-left: 35px;
+  background-image: url('/pict/icon_site.png');
+  background-position: 0px center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.head__info {
+  font-family: 'Open Sans', sans-serif;
+  color: lighten(#000, 30%);
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.card-group {
+  display: block;
+  width: 100%;
+  margin: 0px auto;
+  text-align: center;
+}
+.card-group .card {
+  display: inline-block;
+  width: 45%;
+  border-radius: 0px;
+  border: 0px solid #ddd;
+  vertical-align: top;
+}
+.card-group .card-body {
+  padding: 10px 2px 10px 2px;
+}
+.card-group .card-body .card-title {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+}
+
+.container__small {
+  max-width: 540px;
+}
+
+.dots {
+  /*background-color: #DDD;*/
+}
+.dots ol {
+  /*background-color: #DDD;*/
+  text-align: center;
+  list-style-type: decimal;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+}
+
+/*Table HEADER actions*/
+.head_shot a.btn.shot_clic {
+  /*
+	background-color: #2276ba !important;
+	border: 2px solid #1c5c86 !important;
+*/
+  color: white !important;
+  padding: 2px 10px;
+  font-size: 16px;
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 100;
+}
+.head_shot a.btn.shot_clic:hover {
+  /*
+	background-color: #1c5c86 !important;
+	border: 2px solid #2276ba !important;
+*/
+  color: white;
+}
+
+/*Table ROW actions*/
+table tr td.cell {
+  font-size: 0px;
+}
+table tr td.cell a.btn.btn-light.shot_clic {
+  /*
+	background-color: #2276ba !important;
+	border: 2px solid #1c5c86 !important;
+	color: white !important;
+*/
+  padding: 2px 10px;
+  font-size: 14px;
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 100;
+}
+table tr td.cell a.btn.btn-light.shot_clic:hover {
+  /*
+	background-color: #1c5c86 !important;
+	border: 2px solid #2276ba !important;
+	color: white;
+*/
+}
+table tr td.cell a.btn.btn-light.shot_clic {
+  width: 100%;
+}
+table tr td.cell_dual a.btn.btn-light.shot_clic {
+  width: 50%;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (min-width: 576px) {
+  .head__name {
+    padding-left: 45px;
+    font-size: 36px;
+  }
+  .head__info {
+    font-size: 21px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (min-width: 768px) {
+  .head__name {
+    padding-left: 45px;
+    font-size: 38px;
+  }
+  .head__info {
+    font-size: 23px;
+  }
+  .card-group {
+    width: 100%;
+  }
+  .card-group .card {
+    width: 16%;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+  .head__name {
+    padding-left: 50px;
+    font-size: 40px;
+  }
+  .head__info {
+    font-size: 25px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+  .head__name {
+    padding-left: 50px;
+    font-size: 42px;
+  }
+  .head__info {
+    font-size: 27px;
+  }
+}
