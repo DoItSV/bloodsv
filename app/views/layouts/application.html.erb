@@ -33,7 +33,9 @@
       <div class="container">
         <div class="head py-5">
           <h1 class="head__name">
-            <span class="text-dark">#Salvemos</span><span class="text-primary">Otro</span><span class="text-primary">SV</span>
+            <%= link_to root_path, :class => "head__link" do %>
+              <span class="text-dark">#Salvemos</span><span class="text-primary">Otro</span><span class="text-primary">SV</span>
+            <% end %>
           </h1>
           <h2 class="head__info mt-5">
             En El Salvador existe el <strong>Programa de Plasma Convaleciente</strong> para pacientes con #covid-19. Conectamos <strong><span class="text-success">recuperados</span></strong> con <strong><span class="text-primary">enfermos</span></strong> según si donas <strong>plasma</strong> o te anotas para recibir.

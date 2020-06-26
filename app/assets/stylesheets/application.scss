@@ -32,6 +32,12 @@ body {
   line-height: 1.3;
 }
 
+.head__link {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .card-group {
   display: block;
   width: 100%;
