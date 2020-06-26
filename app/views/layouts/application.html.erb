@@ -1,80 +1,63 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>#SalvemosOtrosSV</title>
-		<%= csrf_meta_tags %>
-		<%= csp_meta_tag %>
-
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
-		<meta property="og:url" 								content="http://salvemosotrosv.com" />
-		<meta property="og:type" 								content="article" />
-		<meta property="og:title" 							content="#SalvemosOtroSV" />
-		<meta property="og:description" 				content="Si ya has superado la #covid-19, puedes  ayudar a otra persona a que lo haga." />
-		<meta property="og:image" 							content="https://salvemosotrosv.com/pict/rrss_1200x0628.jpg?v=1111" />
-
-		<meta name="twitter:title" 							content="#SalvemosOtroSV" />
-		<meta name="twitter:description" 				content="Si ya has superado la #covid-19, puedes  ayudar a otra persona a que lo haga." />
-		<meta name="twitter:card" 							content="summary_large_image" />
-		<meta name="twitter:image" 							content="https://salvemosotrosv.com/pict/rrss_1200x0628.jpg?v=1111" />
-
-		<link rel="apple-touch-icon" sizes="180x180" href="/pict/icon/apple-touch-icon.png" />
-		<link rel="icon" type="image/png" sizes="32x32" href="/pict/icon/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="192x192" href="/pict/icon/android-chrome-192x192.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/pict/icon/favicon-16x16.png" />
-		<link rel="manifest" href="/pict/icon/site.webmanifest" />
-		<link rel="mask-icon" href="/pict/icon/safari-pinned-tab.svg" color="#5bbad5" />
-		<link rel="shortcut icon" href="/pict/icon/favicon.ico" />
-		<meta name="msapplication-TileColor" content="#da532c" />
-		<meta name="msapplication-config" content="/pict/icon/browserconfig.xml" />
-		<meta name="theme-color" content="#ffffff" />
-
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-		<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-	</head>
-
-	<body class="p-0 m-0 bg-dark">
-
-		<div class="pt-2 m-0 bg-white">
-			<div class="container">
-				<h1 class="head_name"><em><strong><span class="text-dark">#Salvemos</span><span class="text-primary">Otro</span><span class="text-primary">SV</span></strong></em></h1>
-				<h1 class="head_info">
-					<em>
-						En El Salvador existe el <strong>Programa de Plasma Convaleciente</strong> para pacientes con <strong>#covid-19</strong>. Conectamos <strong><span class="text-success">recuperados</span></strong> con <strong><span class="text-primary">enfermos</span></strong> según si donas <strong>plasma</strong> o te anotas para recibir.
-						<br/>
-						<br/>
-					</em>
-				</h5>
-			</div>
-
-			<%= yield %>
-		</div>
-
-		<footer class="text-white bg-dark">
-			<div class="container">
-				<div class='py-4 text-left'>
-					<p>
-						<em>
-							Este es un proyecto sin fines de lucro, cuyo único objetivo es apoyar a personas afectadas por la #covid-19.
-							<br/>
-							Si tienes algún problema, sugerencia o apoyo, puedes escribir a <a href="mailto:salvemosotrosv@gmail.com"><span class="text-primary">salvemosotrosv@gmail.com</span></a>.
-							<br/>
-						</em>
-					</p>
-				</div>
-			</div>
-			<!-- Global site tag (gtag.js) - Google Analytics -->
-			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-170905265-1"></script>
-			<script>
-				window.dataLayer = window.dataLayer || [];
-				function gtag(){dataLayer.push(arguments);}
-				gtag('js', new Date());
-
-				gtag('config', 'UA-170905265-1');
-			</script>
-
-		</footer>
-	</body>
+  <head>
+    <title>#SalvemosOtrosSV</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+    <meta property="og:url" 								content="http://salvemosotrosv.com" />
+    <meta property="og:type" 								content="article" />
+    <meta property="og:title" 							content="#SalvemosOtroSV" />
+    <meta property="og:description" 				content="Si ya has superado la #covid-19, puedes  ayudar a otra persona a que lo haga." />
+    <meta property="og:image" 							content="https://salvemosotrosv.com/pict/rrss_1200x0628.jpg?v=1111" />
+    <meta name="twitter:title" 							content="#SalvemosOtroSV" />
+    <meta name="twitter:description" 				content="Si ya has superado la #covid-19, puedes  ayudar a otra persona a que lo haga." />
+    <meta name="twitter:card" 							content="summary_large_image" />
+    <meta name="twitter:image" 							content="https://salvemosotrosv.com/pict/rrss_1200x0628.jpg?v=1111" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/pict/icon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/pict/icon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/pict/icon/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/pict/icon/favicon-16x16.png" />
+    <link rel="manifest" href="/pict/icon/site.webmanifest" />
+    <link rel="mask-icon" href="/pict/icon/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="shortcut icon" href="/pict/icon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-config" content="/pict/icon/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body class="p-0 m-0 bg-dark">
+    <div class="pt-2 m-0 bg-white">
+      <div class="container">
+        <div class="head py-5">
+          <h1 class="head__name">
+            <span class="text-dark">#Salvemos</span><span class="text-primary">Otro</span><span class="text-primary">SV</span>
+          </h1>
+          <h2 class="head__info mt-5">
+            En El Salvador existe el <strong>Programa de Plasma Convaleciente</strong> para pacientes con #covid-19. Conectamos <strong><span class="text-success">recuperados</span></strong> con <strong><span class="text-primary">enfermos</span></strong> según si donas <strong>plasma</strong> o te anotas para recibir.
+          </h2>
+        </div>
+      </div>
+      <%= yield %>
+    </div>
+    <footer class="text-white bg-dark">
+      <div class="container">
+        <div class='py-3'>
+          <p class="my-2">Este es un proyecto sin fines de lucro, cuyo único objetivo es apoyar a personas afectadas por la #covid-19.</p>
+          <p class="my-2">Si tienes algún problema, sugerencia o apoyo, puedes escribir a <a href="mailto:salvemosotrosv@gmail.com" class="text-light"><u>salvemosotrosv@gmail.com</u></a>.</p>
+        </div>
+      </div>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170905265-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-170905265-1');
+      </script>
+    </footer>
+  </body>
 </html>
