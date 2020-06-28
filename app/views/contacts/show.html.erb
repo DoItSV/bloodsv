@@ -11,13 +11,13 @@
   <div class='py-4'>
     <% if @contact.donor? %>
       <p>
-        <strong>Hospital:</strong>
-        <%= @contact.hospital.name %>
+        <strong>Historial del donante:</strong>
+        <%= donor_background_translation(@contact.background) %>
       </p>
     <% else %>
       <p>
-        <strong>Historial del donante:</strong>
-        <%= donor_background_translation(@contact.background) %>
+        <strong>Hospital:</strong>
+        <%= @contact.hospital&.name %>
       </p>
     <% end %>
     <p>
