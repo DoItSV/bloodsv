@@ -16,11 +16,15 @@
 #
 class Contact < ApplicationRecord
   belongs_to :user
-  belongs_to :hospital
+  belongs_to :hospital, optional: true
 
+  enum kind: %i[patient donor]
+  enum background: %i[possible confirmed_wo_certificate confirmed_w_certificate]
   enum status: %i[si no]
   enum blood_type: %i[A+ A- B+ B- O+ O- AB+ AB-]
 
+  scope :by_patient, -> { where(kind: :patient) }
+  scope :by_donor, -> { where(kind: :donor) }
   scope :by_active, -> { where(status: :si) }
   scope :by_user, -> (user) { by_active.or(Contact.where(user: user)) }
 end

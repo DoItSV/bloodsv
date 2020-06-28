@@ -91,9 +91,11 @@
   <div class='p-0 m-0 text-right'>
     <% if user_signed_in? %>
       <a href="<%= new_contact_path %>" class="btn shot_clic btn-primary active" role="button" aria-pressed="true">+Agregar paciente</a>
+      <a href="<%= new_donor_path %>" class="btn shot_clic btn-danger active" role="button" aria-pressed="true">+Agregar donante</a>
       <a href="<%= destroy_user_session_path %>" class="btn shot_clic btn-secondary active" role="button" aria-pressed="true" data-method="delete">Cerrar sesión</a>
     <% else %>
-      <a href="<%= new_user_registration_path %>" class="btn shot_clic btn-primary active" role="button" aria-pressed="true">+Agregar paciente</a>
+      <a href="<%= new_contact_path %>" class="btn shot_clic btn-primary active" role="button" aria-pressed="true">+Agregar paciente</a>
+      <a href="<%= new_donor_path %>" class="btn shot_clic btn-danger active" role="button" aria-pressed="true">+Agregar donante</a>
       <a href="<%= new_user_session_path %>" class="btn shot_clic btn-secondary active" role="button" aria-pressed="true">Iniciar sesión</a>
     <% end %>
   </div>
@@ -123,7 +125,7 @@
               <% end %>
             </td>
             <td scope='row'><%= contact.blood_type %></td>
-            <td scope='row'><%= contact.hospital.name %></td>
+            <td scope='row'><%= contact.hospital&.name %></td>
             <td scope='row'><a href="tel:<%= contact.mobile %>"><%= contact.mobile %></a></td>
             <td scope='row'><%= contact.first_name %></td>
             <td scope='row'><%= contact.last_name %></td>

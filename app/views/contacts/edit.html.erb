@@ -1,5 +1,9 @@
 <div class="container container__small">
-  <h5>Una vez se consiga la donación de sangre recuerda desactivar <strong>Buscar donantes ahora</strong> para que otros pacientes también puedan recibir ayuda.</h5>
+  <% if @contact.donor? %>
+    <h5>Recuerda que se puede donar sangre 4 veces seguidas cada 8 días, y luego se deberá de esperar 1 mes antes de poder volver a donar. ¡Muchas gracias!</h5>
+  <% else %>
+    <h5>Una vez se consiga la donación de sangre recuerda desactivar <strong>Buscar donantes ahora</strong> para que otros pacientes también puedan recibir ayuda.</h5>
+  <% end %>
   <div class="py-4">
     <%= render 'form', contact: @contact %>
   </div>
