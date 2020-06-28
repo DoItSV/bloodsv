@@ -52,8 +52,12 @@
   </div>
 
   <div class="actions">
-    <a href="<%= contacts_path %>" class="btn btn-secondary active" role="button" aria-pressed="true">Regresar</a>
     <%= form.hidden_field :kind %>
+    <a href="<%= contacts_path %>" class="btn btn-secondary active" role="button" aria-pressed="true">Regresar</a>
+    <% if Contact.exists?(contact.id) %>
+      <%= link_to 'Eliminar', contact, method: :delete, data: { confirm: "¿Esta seguro de querer eliminar el contacto?" }, class: 'btn shot_clic btn-danger active' %>
+    <% end %>
+    <%= form.submit 'Eliminar', class: 'btn btn-primary' %>
     <%= form.submit 'Guardar', class: 'btn btn-primary' %>
   </div>
 <% end %>

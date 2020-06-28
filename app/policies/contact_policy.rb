@@ -26,7 +26,7 @@ class ContactPolicy < ApplicationPolicy
   end
 
   def destroy?
-    false
+    owner?
   end
 
   protected
