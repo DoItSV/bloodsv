@@ -57,7 +57,6 @@
     <% if Contact.exists?(contact.id) %>
       <%= link_to 'Eliminar', contact, method: :delete, data: { confirm: "¿Esta seguro de querer eliminar el contacto?" }, class: 'btn shot_clic btn-danger active' %>
     <% end %>
-    <%= form.submit 'Eliminar', class: 'btn btn-primary' %>
     <%= form.submit 'Guardar', class: 'btn btn-primary' %>
   </div>
 <% end %>
