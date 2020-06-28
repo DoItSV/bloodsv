@@ -128,6 +128,18 @@ table tr td.cell_dual a.btn.btn-light.shot_clic {
   width: 50%;
 }
 
+.thead-relative {
+  position: relative;
+}
+
+.th-sticky {
+  position: sticky;
+}
+
+.th-sticky-by-minus-1-px {
+  top: -1px;
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media screen and (min-width: 576px) {
   .head__name {
