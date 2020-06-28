@@ -15,7 +15,12 @@ class ContactsController < ApplicationController
 
   # GET /contacts/new
   def new
-    @contact = Contact.new
+    @contact = Contact.new(kind: :patient)
+  end
+
+  def new_donor
+    @contact = Contact.new(kind: :donor)
+    render :new
   end
 
   # GET /contacts/1/edit
@@ -82,6 +87,7 @@ class ContactsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def contact_params
-      params.require(:contact).permit(:blood_type, :hospital_id, :first_name, :last_name, :mobile, :status, :details)
+      params.require(:contact).permit(:blood_type, :hospital_id, :first_name, :last_name, :mobile, :status, :details,
+                                      :email)
     end
 end

@@ -1,0 +1,7 @@
+es:
+  hello: "Hola mundo"
+  donor:
+    background:
+      possible: "Caso posible recuperado de COVID-19 sin pruebas"
+      confirmed_wo_certificate: "Caso confirmado recuperado sin prueba final de anticuerpos"
+      confirmed_w_certificate: "Caso confirmado recuperado con prueba final de anticuerpos"
