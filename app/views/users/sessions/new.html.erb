@@ -5,12 +5,12 @@
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-group">
         <%= f.label :email, 'Correo electrónico' %>
-        <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control', placeholder: 'Email', required: '' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control', placeholder: 'Ingrese su correo electrónico', required: '' %>
       </div>
 
       <div class="form-group">
         <%= f.label :password, 'Contraseña' %>
-        <%= f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: 'Contraseña', required: '' %>
+        <%= f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: 'Ingrese su contraseña', required: '' %>
       </div>
 
       <% if devise_mapping.rememberable? %>
