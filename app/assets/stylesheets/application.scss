@@ -140,6 +140,10 @@ table tr td.cell_dual a.btn.btn-light.shot_clic {
   top: -1px;
 }
 
+.btn-action {
+  min-width: 80px;
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media screen and (min-width: 576px) {
   .head__name {
