@@ -33,11 +33,12 @@
       <strong>Detalles:</strong>
       <%= @contact.details %>
     </p>
-    <div class='py-4'>
+    <div class='py-4 text-center mt-4'>
       <% if policy(@contact).edit? %>
-        <a href="<%= edit_contact_path(@contact) %>" class="btn btn-primary active" role="button" aria-pressed="true">Actualizar</a>
+        <a href="<%= edit_contact_path(@contact) %>" class="btn btn-primary btn-block active" role="button" aria-pressed="true">Actualizar</a>
+        <br/>
       <% end %>
-      <a href="<%= contacts_path %>" class="btn btn-secondary active" role="button" aria-pressed="true">Regresar</a>
+      <a href="<%= contacts_path %>">Regresar</a>
     </div>
   </div>
 </div>

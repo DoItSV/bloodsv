@@ -3,19 +3,30 @@
   <div class='py-4'>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-group">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Email' %>
+        <%= f.label :email, 'Email' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Email', required: '' %>
       </div>
+
       <div class="form-group">
-        <%= f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: 'Contraseña' %>
+        <%= f.label :password, 'Contraseña' %>
+        <%= f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: 'Contraseña', required: '' %>
       </div>
+
       <% if devise_mapping.rememberable? %>
-        <div class="form-group">
-          <%= f.check_box :remember_me %> Recordarme
+        <div class="form-inline">
+          <div class="form-check">
+            <%= f.check_box :remember_me, {:class => 'form-control'} %>
+            <%= f.label :remember_me, 'Recordarme', {:class => 'ml-2'} %>
+          </div>
         </div>
       <% end %>
-      <div class="actions">
-        <a href="<%= new_registration_path(resource) %>" class="btn btn-secondary active" role="button" aria-pressed="true">Crear cuenta</a>
-        <%= f.submit 'Iniciar sesión', class: 'btn btn-primary' %>
+
+      <div class="actions mt-2 text-center">
+        <%= f.submit 'Iniciar sesión', class: 'btn btn-primary btn-block' %>
+        <p class="mt-3">
+          ¿No tienes cuenta?&nbsp;
+          <a href="<%= new_registration_path(resource) %>">Crear cuenta</a>
+        </p>
       </div>
     <% end %>
   </div>
