@@ -131,10 +131,10 @@
       <tbody>
         <% @contacts.each do |contact| %>
           <tr>
-            <td scope='row' class='cell <% if policy(contact).edit? %>cell_dual<% end %>'>
+            <td scope='row' class='cell'>
               <a href="<%= contact_path(contact) %>" class="btn btn-light active btn-sm shot_clic" role="button" aria-pressed="true">Ver más</a>
               <% if policy(contact).edit? %>
-                <a href="<%= edit_contact_path(contact) %>" class="btn btn-light active btn-sm shot_clic" role="button" aria-pressed="true">Actualizar</a>
+                <a href="<%= edit_contact_path(contact) %>" class="btn btn-light active btn-sm shot_clic mt-1" role="button" aria-pressed="true">Actualizar</a>
               <% end %>
             </td>
             <td scope='row'><%= contact.blood_type %></td>

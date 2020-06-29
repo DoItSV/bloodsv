@@ -38,7 +38,8 @@
   </div>
 
   <div class="form-group">
-    <%= form.text_field :email, class: 'form-control', placeholder: 'Correo Electrónico' %>
+    <%= form.label :email, 'Correo electrónico' %>
+    <%= form.text_field :email, class: 'form-control', placeholder: 'Correo electrónico' %>
   </div>
 
   <div class="form-group">
@@ -58,12 +59,14 @@
     </div>
   </div>
 
-  <div class="actions">
+  <div class="actions mt-3 text-center">
     <%= form.hidden_field :kind %>
-    <a href="<%= contacts_path %>" class="btn btn-secondary active" role="button" aria-pressed="true">Regresar</a>
+
+    <%= form.submit 'Guardar', class: 'btn btn-primary btn-block' %>
     <% if Contact.exists?(contact.id) %>
-      <%= link_to 'Eliminar', contact, method: :delete, data: { confirm: "¿Esta seguro de querer eliminar el contacto?" }, class: 'btn shot_clic btn-danger active' %>
+      <%= link_to 'Eliminar', contact, method: :delete, data: { confirm: "¿Esta seguro de querer eliminar el contacto?" }, class: 'btn btn-danger btn-block' %>
     <% end %>
-    <%= form.submit 'Guardar', class: 'btn btn-primary' %>
+    <br/>
+    <a href="<%= contacts_path %>">Regresar</a>
   </div>
 <% end %>
