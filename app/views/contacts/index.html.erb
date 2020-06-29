@@ -91,26 +91,41 @@
   <div class='p-0 m-0 text-right'>
     <% if user_signed_in? %>
       <a href="<%= new_contact_path %>" class="btn shot_clic btn-primary active" role="button" aria-pressed="true">+Agregar paciente</a>
+      <a href="<%= new_donor_path %>" class="btn shot_clic btn-danger active" role="button" aria-pressed="true">+Agregar donante</a>
       <a href="<%= destroy_user_session_path %>" class="btn shot_clic btn-secondary active" role="button" aria-pressed="true" data-method="delete">Cerrar sesión</a>
     <% else %>
-      <a href="<%= new_user_registration_path %>" class="btn shot_clic btn-primary active" role="button" aria-pressed="true">+Agregar paciente</a>
+      <a href="<%= new_contact_path %>" class="btn shot_clic btn-primary active" role="button" aria-pressed="true">+Agregar paciente</a>
+      <a href="<%= new_donor_path %>" class="btn shot_clic btn-danger active" role="button" aria-pressed="true">+Agregar donante</a>
       <a href="<%= new_user_session_path %>" class="btn shot_clic btn-secondary active" role="button" aria-pressed="true">Iniciar sesión</a>
     <% end %>
   </div>
 </div>
 <div class="container">
-  <h5><strong>Listado de pacientes que necesitan plasma</strong></h5>
   <div class="pt-3 pb-3">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link <%= params[:donors] ? '' : 'active' %>" href="<%= contacts_path %>">Pacientes que necesitan plasma</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <%= params[:donors] ? 'active' : '' %>" href="<%= contacts_path(donors: 1) %>">Donantes de plasma</a>
+      </li>
+    </ul>
     <table class='table table-hover table-responsive-sm'>
       <thead class='thead-dark thead-relative'>
         <tr>
           <th class="th-sticky th-sticky-by-minus-1-px" scope='col'></th>
           <th class="th-sticky th-sticky-by-minus-1-px" scope='col'>Tipo</th>
-          <th class="th-sticky th-sticky-by-minus-1-px" scope='col'>Hospital</th>
+          <% if params[:donors] %>
+            <th class="th-sticky th-sticky-by-minus-1-px" scope='col'>Historial del donante</th>
+          <% else %>
+            <th class="th-sticky th-sticky-by-minus-1-px" scope='col'>Hospital</th>
+          <% end %>
           <th class="th-sticky th-sticky-by-minus-1-px" scope='col'>Contacto</th>
           <th class="th-sticky th-sticky-by-minus-1-px" scope='col'>Nombre</th>
           <th class="th-sticky th-sticky-by-minus-1-px" scope='col'>Apellido</th>
-          <th class="th-sticky th-sticky-by-minus-1-px" scope='col'>Info</th>
+          <% unless params[:donors] %>
+            <th class="th-sticky th-sticky-by-minus-1-px" scope='col'>Info</th>
+          <% end %>
         </tr>
       </thead>
       <tbody>
@@ -123,11 +138,13 @@
               <% end %>
             </td>
             <td scope='row'><%= contact.blood_type %></td>
-            <td scope='row'><%= contact.hospital.name %></td>
+            <td scope='row'><%= params[:donors] ? donor_background_translation(contact.background) : contact.hospital&.name %></td>
             <td scope='row'><a href="tel:<%= contact.mobile %>"><%= contact.mobile %></a></td>
             <td scope='row'><%= contact.first_name %></td>
             <td scope='row'><%= contact.last_name %></td>
-            <td scope='row'><%= contact.details %></td>
+            <% unless params[:donors] %>
+              <td scope='row'><%= contact.details %></td>
+            <% end %>
           </tr>
         <% end %>
       </tbody>

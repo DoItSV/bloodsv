@@ -5,7 +5,7 @@ class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
   def index
-    load_contacts
+    params[:donors] ? load_donors : load_contacts
   end
 
   # GET /contacts/1
@@ -15,7 +15,12 @@ class ContactsController < ApplicationController
 
   # GET /contacts/new
   def new
-    @contact = Contact.new
+    @contact = Contact.new(kind: :patient)
+  end
+
+  def new_donor
+    @contact = Contact.new(kind: :donor)
+    render :new
   end
 
   # GET /contacts/1/edit
@@ -71,17 +76,26 @@ class ContactsController < ApplicationController
   protected
 
   def load_contacts
-    @contacts ||= (user_signed_in? ? Contact.by_user(current_user) : Contact.by_active).order('updated_at DESC')
+    @contacts ||= load_all_contacts.by_patient
+  end
+
+  def load_donors
+    @contacts ||= load_all_contacts.by_donor
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_contact
-      @contact = Contact.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_contact
+    @contact = Contact.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def contact_params
-      params.require(:contact).permit(:blood_type, :hospital_id, :first_name, :last_name, :mobile, :status, :details)
-    end
+  # Only allow a list of trusted parameters through.
+  def contact_params
+    params.require(:contact).permit(:blood_type, :hospital_id, :first_name, :last_name, :mobile, :status, :details,
+                                    :email, :kind, :background)
+  end
+
+  def load_all_contacts
+    (user_signed_in? ? Contact.by_user(current_user) : Contact.by_active).order('updated_at DESC')
+  end
 end
