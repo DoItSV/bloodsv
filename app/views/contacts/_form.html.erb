@@ -17,46 +17,56 @@
     </div>
   <% else %>
     <div class="form-group">
-      <%= form.label :hospital_id, 'Hospital' %>
+      <%= form.label :hospital_id, 'Seleccione un hospital' %>
       <%= form.collection_select :hospital_id, hospitals, :id, :name, {}, class: 'form-control' %>
     </div>
   <% end %>
 
   <div class="form-group">
-    <%= form.text_field :first_name, class: 'form-control', placeholder: 'Nombre' %>
+    <%= form.label :first_name, 'Nombres' %>
+    <%= form.text_field :first_name, class: 'form-control', placeholder: 'Nombres', required: 'required' %>
   </div>
 
   <div class="form-group">
-    <%= form.text_field :last_name, class: 'form-control', placeholder: 'Apellido' %>
+    <%= form.label :last_name, 'Apellidos' %>
+    <%= form.text_field :last_name, class: 'form-control', placeholder: 'Apellidos', required: 'required' %>
   </div>
 
   <div class="form-group">
+    <%= form.label :mobile, 'Télefono' %>
     <%= form.text_field :mobile, class: 'form-control', placeholder: 'Teléfono de contacto (es opcional pero recomendado)' %>
   </div>
 
   <div class="form-group">
-    <%= form.text_field :email, class: 'form-control', placeholder: 'Correo Electrónico' %>
+    <%= form.label :email, 'Correo electrónico' %>
+    <%= form.text_field :email, class: 'form-control', placeholder: 'Correo electrónico' %>
   </div>
 
   <div class="form-group">
+    <%= form.label :blood_type, 'Seleccione el tipo de sangre' %>
     <%= form.collection_select :blood_type, blood_types, :first, :first, {}, class: 'form-control' %>
   </div>
 
   <div class="form-group">
+    <%= form.label :details, 'Brinde más detalles' %>
     <%= form.text_area :details, class: 'form-control', placeholder: 'Detalles' %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :status, (contact.donor? ? 'En estos momentos puedo donar' : 'Buscar donantes ahora') %>
-    <%= form.collection_select :status, contact_status, :first, :first, {}, class: 'form-control' %>
+  <div class="form-inline">
+    <div class="form-check">
+      <%= form.check_box :status, {:class => 'form-control'}, 'si', 'no' %>
+      <%= form.label :status, (contact.donor? ? 'En estos momentos puedo donar' : 'Buscar donantes ahora'), {:class => 'ml-2'} %>
+    </div>
   </div>
 
-  <div class="actions">
+  <div class="actions mt-3 text-center">
     <%= form.hidden_field :kind %>
-    <a href="<%= contacts_path %>" class="btn btn-secondary active" role="button" aria-pressed="true">Regresar</a>
+
+    <%= form.submit 'Guardar', class: 'btn btn-primary btn-block' %>
     <% if Contact.exists?(contact.id) %>
-      <%= link_to 'Eliminar', contact, method: :delete, data: { confirm: "¿Esta seguro de querer eliminar el contacto?" }, class: 'btn shot_clic btn-danger active' %>
+      <%= link_to 'Eliminar', contact, method: :delete, data: { confirm: "¿Esta seguro de querer eliminar el contacto?" }, class: 'btn btn-danger btn-block' %>
     <% end %>
-    <%= form.submit 'Guardar', class: 'btn btn-primary' %>
+    <br/>
+    <a href="<%= contacts_path %>">Regresar</a>
   </div>
 <% end %>
