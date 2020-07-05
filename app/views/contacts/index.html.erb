@@ -127,9 +127,7 @@
           <th class="th-sticky th-sticky-by-minus-1-px" scope='col'>Contacto</th>
           <th class="th-sticky th-sticky-by-minus-1-px" scope='col'>Nombre</th>
           <th class="th-sticky th-sticky-by-minus-1-px" scope='col'>Apellido</th>
-          <% unless params[:donors] %>
-            <th class="th-sticky th-sticky-by-minus-1-px" scope='col'>Info</th>
-          <% end %>
+          <th class="th-sticky th-sticky-by-minus-1-px" scope='col'>Más detalles</th>
         </tr>
       </thead>
       <tbody>
@@ -146,9 +144,7 @@
             <td scope='row'><a href="tel:<%= contact.mobile %>"><%= contact.mobile %></a></td>
             <td scope='row'><%= contact.first_name %></td>
             <td scope='row'><%= contact.last_name %></td>
-            <% unless params[:donors] %>
-              <td scope='row'><%= contact.details %></td>
-            <% end %>
+            <td scope='row'><%= contact.details %></td>
           </tr>
         <% end %>
       </tbody>
