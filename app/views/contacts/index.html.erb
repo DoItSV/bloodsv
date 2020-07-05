@@ -103,11 +103,15 @@
 <div class="container">
   <div class="pt-3 pb-3">
     <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link <%= params[:donors] ? '' : 'active' %>" href="<%= contacts_path %>">Pacientes que necesitan plasma</a>
+      <li class="nav-item text-center flex-grow-1 flex-sm-grow-0">
+        <a class="nav-link border-bottom-0 border-secondary <%= params[:donors] ? '' : 'bg-success text-white font-weight-bold' %>" href="<%= contacts_path %>">
+          Necesitan plasma
+        </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link <%= params[:donors] ? 'active' : '' %>" href="<%= contacts_path(donors: 1) %>">Donantes de plasma</a>
+      <li class="nav-item ml-1 text-center flex-grow-1 flex-sm-grow-0">
+        <a class="nav-link border-bottom-0 border-secondary <%= params[:donors] ? 'bg-success text-white font-weight-bold' : '' %>" href="<%= contacts_path(donors: 1) %>">
+          Donantes de plasma
+        </a>
       </li>
     </ul>
     <table class='table table-hover table-responsive-sm'>
