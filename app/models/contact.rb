@@ -30,12 +30,4 @@ class Contact < ApplicationRecord
   scope :by_donor, -> { where(kind: :donor) }
   scope :by_active, -> { where(status: :si) }
   scope :by_user, -> (user) { by_active.or(Contact.where(user: user)) }
-  scope :by_blood_type_a_plus, -> { by_active.where(blood_type: Contact::blood_types["A+"])}
-  scope :by_blood_type_a_minus, -> { by_active.where(blood_type: Contact::blood_types["A-"])}
-  scope :by_blood_type_b_plus, -> { by_active.where(blood_type: Contact::blood_types["B+"])}
-  scope :by_blood_type_b_minus, -> { by_active.where(blood_type: Contact::blood_types["B-"])}
-  scope :by_blood_type_o_plus, -> { by_active.where(blood_type: Contact::blood_types["O+"])}
-  scope :by_blood_type_o_minus, -> { by_active.where(blood_type: Contact::blood_types["O-"])}
-  scope :by_blood_type_ab_plus, -> { by_active.where(blood_type: Contact::blood_types["AB+"])}
-  scope :by_blood_type_ab_minus, -> { by_active.where(blood_type: Contact::blood_types["AB-"])}
 end
