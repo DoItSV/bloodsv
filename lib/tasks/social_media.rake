@@ -2,7 +2,7 @@ namespace :social_media do
   desc "TODO"
   task daily_blood_donnors_report: :environment do
     link = "https://salvemosotrosv.com/donantes"
-    Contact.group(:blood_type)
+    Contact.by_donor.group(:blood_type)
       .select("blood_type, count(*) as total")
       .having("count(*) > 0")
       .map {|c| [c.blood_type, c.total] }.to_h
